@@ -1,0 +1,6 @@
+.git
+.github
+README.md
+*.log
+__pycache__
+.pytest_cache
