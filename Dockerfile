@@ -15,9 +15,11 @@ RUN apt-get update \
         libgomp1 \
         ca-certificates \
         curl \
+        git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN uv tool install photo-tagger
+RUN uv tool install \
+    "photo-tagger @ git+https://github.com/holrak/photo-tagger.git@native-output"
 
 RUN photo-tagger --help >/dev/null \
     && exiftool -ver
